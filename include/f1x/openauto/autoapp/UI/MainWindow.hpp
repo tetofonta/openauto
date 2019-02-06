@@ -20,6 +20,8 @@
 
 #include <memory>
 #include <QMainWindow>
+#include <QPushButton>
+#include <QWidget>
 
 namespace Ui
 {
