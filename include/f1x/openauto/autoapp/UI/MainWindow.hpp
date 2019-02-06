@@ -52,8 +52,9 @@ signals:
 
 private slots:
     void onVolume();
+    void onVolume_btn();
 private:
-    QWidget * showPage(QWidget * w);
+    void showPage(QWidget * w);
 
     Ui::MainWindow *ui;
 
@@ -66,6 +67,7 @@ private:
     long vol = 50;
 
     QWidget * volume_pg;
+    QWidget * welcome_pg;
 };
 
 }

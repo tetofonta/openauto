@@ -22,6 +22,7 @@
 #include <QtWidgets/QListWidget>
 #include <alsa_manager.h>
 #include <volume_control.h>
+#include <welcome_page.h>
 #include "ui_mainwindow.h"
 
 namespace f1x {
@@ -52,9 +53,13 @@ namespace f1x {
                     this->isMuted = !this->isMuted;
                 }
 
-                QWidget *MainWindow::showPage(QWidget *w) {
+                void MainWindow::showPage(QWidget *w) {
                     w->show();
-                    w->setGeometry(QRect(QPoint(10, 70), QSize(700, 400)));
+                    w->setGeometry(QRect(QPoint(10, 70), QSize(920, 510)));
+                }
+
+                void MainWindow::onVolume_btn() {
+                    showPage(volume_pg);
                 }
 
                 MainWindow::MainWindow(QWidget *parent)
@@ -63,6 +68,8 @@ namespace f1x {
 
                     /*loading pages*/
                     ui->setupUi(this);
+                    welcome_pg = new welcome_page(this);
+                    welcome_pg->hide();
                     volume_pg = new volume_control(this, &(this->isMuted), &(this->vol));
                     volume_pg->hide();
                     connect(volume_pg, SIGNAL (volumeMuted()),this, SLOT (onVolume()));
@@ -73,9 +80,9 @@ namespace f1x {
                     /**/
 
                     /*first page*/
-                    showPage(volume_pg);
+                    showPage(welcome_pg);
 
-                    /*adding defaults status buttons*/
+                    /*adding defaults status buttons TODO*/
                     addButton(ui->listWidget, ui, ":/ico_setting");
                     addButton(ui->listWidget, ui, ":/ico_bt_on");
                     this->volume = addButton(ui->listWidget, ui, ":/ico_volume");
@@ -86,6 +93,8 @@ namespace f1x {
                     /*connecting callbacks*/
                     connect(volume, SIGNAL(released()), this, SLOT(onVolume()));
 
+
+                    connect(ui->volume_v, SIGNAL(released()), this, SLOT(onVolume_btn()));
                 }
 
                 MainWindow::~MainWindow() {

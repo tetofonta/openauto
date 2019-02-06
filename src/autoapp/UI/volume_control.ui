@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
-    <height>400</height>
+    <width>920</width>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,17 +16,36 @@
   <widget class="QDial" name="dial">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>20</y>
-     <width>381</width>
-     <height>381</height>
+     <x>40</x>
+     <y>40</y>
+     <width>401</width>
+     <height>401</height>
     </rect>
    </property>
    <property name="maximum">
     <number>100</number>
    </property>
+   <property name="wrapping">
+    <bool>false</bool>
+   </property>
+   <property name="notchTarget">
+    <double>3.000000000000000</double>
+   </property>
    <property name="notchesVisible">
     <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="volume_v">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>160</y>
+     <width>311</width>
+     <height>141</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:72pt; font-weight:600;&quot;&gt;100%&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
  </widget>

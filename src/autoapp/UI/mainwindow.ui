@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>480</height>
+    <width>1024</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="palette">
@@ -209,7 +209,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>140</x>
+      <x>150</x>
       <y>10</y>
       <width>31</width>
       <height>41</height>
@@ -243,7 +243,7 @@
      <rect>
       <x>20</x>
       <y>50</y>
-      <width>761</width>
+      <width>991</width>
       <height>20</height>
      </rect>
     </property>
@@ -254,15 +254,15 @@
    <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>930</x>
       <y>60</y>
       <width>91</width>
-      <height>421</height>
+      <height>541</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="music_b">
        <property name="text">
         <string/>
        </property>
@@ -272,8 +272,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>52</width>
+         <height>52</height>
         </size>
        </property>
        <property name="shortcut">
@@ -288,7 +288,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_6">
+      <widget class="QPushButton" name="video_v">
        <property name="text">
         <string/>
        </property>
@@ -298,8 +298,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>52</width>
+         <height>52</height>
         </size>
        </property>
        <property name="shortcut">
@@ -314,7 +314,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_7">
+      <widget class="QPushButton" name="internet_v">
        <property name="text">
         <string/>
        </property>
@@ -324,8 +324,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>52</width>
+         <height>52</height>
         </size>
        </property>
        <property name="shortcut">
@@ -340,7 +340,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="auto_v">
        <property name="text">
         <string/>
        </property>
@@ -350,8 +350,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>52</width>
+         <height>52</height>
         </size>
        </property>
        <property name="shortcut">
@@ -366,7 +366,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="volume_v">
        <property name="text">
         <string/>
        </property>
@@ -376,8 +376,8 @@
        </property>
        <property name="iconSize">
         <size>
-         <width>48</width>
-         <height>48</height>
+         <width>52</width>
+         <height>52</height>
         </size>
        </property>
        <property name="shortcut">
@@ -396,7 +396,7 @@
    <widget class="QListWidget" name="listWidget">
     <property name="geometry">
      <rect>
-      <x>420</x>
+      <x>640</x>
       <y>10</y>
       <width>371</width>
       <height>41</height>

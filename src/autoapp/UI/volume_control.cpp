@@ -1,6 +1,7 @@
 #include <volume_control.h>
 #include "ui_volume_control.h"
 #include <alsa_manager.h>
+#include <cstdio>
 
 namespace f1x {
     namespace openauto {
@@ -13,6 +14,10 @@ void volume_control::onVolChange(int val){
 
     long v = val;
     *(this->vol) = val;
+    char buffer [170];
+    sprintf(buffer, "<html><head/><body><p><span style=\" font-size:72pt; font-weight:600;\">%d%%</span></p></body></html>", val);
+    ui->volume_v->setText(buffer);
+
     alsaVolume(AUDIO_VOLUME_SET, &v);
 }
 
