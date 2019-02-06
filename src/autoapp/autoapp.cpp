@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
         qApplication.setOverrideCursor(cursor);
     });
 
-    mainWindow.showFullScreen();
+    mainWindow.show();
 
     aasdk::usb::USBWrapper usbWrapper(usbContext);
     aasdk::usb::AccessoryModeQueryFactory queryFactory(usbWrapper, ioService);
