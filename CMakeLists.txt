@@ -98,3 +98,6 @@ target_link_libraries(btservice
                         ${Qt5MultimediaWidgets_LIBRARIES}
                         ${PROTOBUF_LIBRARIES}
                         ${AASDK_PROTO_LIBRARIES})
+
+file(GLOB_RECURSE ui_files *.ui)
+add_custom_target(make_ui ${ui_files})

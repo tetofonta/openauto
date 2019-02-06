@@ -4,5 +4,16 @@
         <file>ico_warning.png</file>
         <file>ico_setting.png</file>
         <file>ico_info.png</file>
+        <file>ico_clock.png</file>
+        <file>ico_bt_off.png</file>
+        <file>ico_bt_on.png</file>
+        <file>ico_usb.png</file>
+        <file>ico_volume.png</file>
+        <file>ico_volume_mute.png</file>
+        <file>ico_wifi_connected.png</file>
+        <file>ico_music.png</file>
+        <file>icon_vol.png</file>
+        <file>ico_video.png</file>
+        <file>ico_web.png</file>
     </qresource>
 </RCC>

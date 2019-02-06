@@ -17,35 +17,30 @@
 */
 
 #include <QApplication>
+#include <QPushButton>
 #include <f1x/openauto/autoapp/UI/MainWindow.hpp>
 #include "ui_mainwindow.h"
 
-namespace f1x
-{
-namespace openauto
-{
-namespace autoapp
-{
-namespace ui
-{
+namespace f1x {
+    namespace openauto {
+        namespace autoapp {
+            namespace ui {
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui_(new Ui::MainWindow)
-{
-    ui_->setupUi(this);
-    connect(ui_->pushButtonSettings, &QPushButton::clicked, this, &MainWindow::openSettings);
-    connect(ui_->pushButtonExit, &QPushButton::clicked, this, &MainWindow::exit);
-    connect(ui_->pushButtonToggleCursor, &QPushButton::clicked, this, &MainWindow::toggleCursor);
-    connect(ui_->pushButtonWirelessConnection, &QPushButton::clicked, this, &MainWindow::openConnectDialog);
-}
+                MainWindow::MainWindow(QWidget *parent)
+                        : QMainWindow(parent), ui_(new Ui::MainWindow) {
+                    ui_->setupUi(this);
+                    connect(ui_->pushButtonSettings, &QPushButton::clicked, this, &MainWindow::openSettings);
+                    connect(ui_->pushButtonExit, &QPushButton::clicked, this, &MainWindow::exit);
+                    connect(ui_->pushButtonToggleCursor, &QPushButton::clicked, this, &MainWindow::toggleCursor);
+                    connect(ui_->pushButtonWirelessConnection, &QPushButton::clicked, this,
+                            &MainWindow::openConnectDialog);
+                }
 
-MainWindow::~MainWindow()
-{
-    delete ui_;
-}
+                MainWindow::~MainWindow() {
+                    delete ui_;
+                }
 
-}
-}
-}
+            }
+        }
+    }
 }
