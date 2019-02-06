@@ -85,7 +85,7 @@ int main(int argc, char* argv[])
 
     QApplication qApplication(argc, argv);
     autoapp::ui::MainWindow mainWindow;
-    mainWindow.setWindowFlags(Qt::WindowStaysOnTopHint);
+//    mainWindow.setWindowFlags(Qt::WindowStaysOnTopHint);
 
     auto configuration = std::make_shared<autoapp::configuration::Configuration>();
     autoapp::ui::SettingsWindow settingsWindow(configuration);
@@ -102,11 +102,8 @@ int main(int argc, char* argv[])
     QObject::connect(&mainWindow, &autoapp::ui::MainWindow::openSettings, &settingsWindow, &autoapp::ui::SettingsWindow::showFullScreen);
     QObject::connect(&mainWindow, &autoapp::ui::MainWindow::openConnectDialog, &connectDialog, &autoapp::ui::ConnectDialog::exec);
 
-    qApplication.setOverrideCursor(Qt::BlankCursor);
-    QObject::connect(&mainWindow, &autoapp::ui::MainWindow::toggleCursor, [&qApplication]() {
-        const auto cursor = qApplication.overrideCursor()->shape() == Qt::BlankCursor ? Qt::ArrowCursor : Qt::BlankCursor;
-        qApplication.setOverrideCursor(cursor);
-    });
+//    qApplication.setOverrideCursor(Qt::BlankCursor);
+
 
     mainWindow.show();
 

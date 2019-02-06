@@ -249,7 +249,7 @@ void AndroidAutoEntity::triggerQuit()
 
 void AndroidAutoEntity::schedulePing()
 {
-    auto promise = IPinger::Promise::defer(strand_);
+    /*auto promise = IPinger::Promise::defer(strand_);
     promise->then([this, self = this->shared_from_this()]() {
         this->sendPing();
         this->schedulePing();
@@ -263,7 +263,7 @@ void AndroidAutoEntity::schedulePing()
         }
     });
 
-    pinger_->ping(std::move(promise));
+    pinger_->ping(std::move(promise));*/
 }
 
 void AndroidAutoEntity::sendPing()
