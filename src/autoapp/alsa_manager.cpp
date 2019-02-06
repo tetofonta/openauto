@@ -1,4 +1,6 @@
 #include <alsa_manager.h>
+#include <alsa/asoundlib.h>
+#include <alsa/mixer.h>
 
 
 int alsaVolume(audio_volume_action action, long* outvol){

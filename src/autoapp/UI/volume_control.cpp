@@ -1,6 +1,11 @@
-#include "volume_control.h"
+#include <volume_control.h>
 #include "ui_volume_control.h"
+#include <alsa_manager.h>
 
+namespace f1x {
+    namespace openauto {
+        namespace autoapp {
+            namespace ui {
 void volume_control::onVolChange(int val){
     if((!val && !*(this->isMuted)) || (val && *(this->isMuted))){
         emit volumeMuted();
@@ -27,3 +32,4 @@ volume_control::~volume_control()
 {
     delete ui;
 }
+}}}}

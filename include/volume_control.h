@@ -1,13 +1,23 @@
 #ifndef VOLUME_CONTROL_H
 #define VOLUME_CONTROL_H
 
-#include <QWidget>
-#include "alsa_manager.h"
+#pragma once
 
+#include <memory>
+#include <QMainWindow>
+#include <QPushButton>
+#include <QWidget>
 namespace Ui {
 class volume_control;
 }
-
+namespace f1x
+{
+namespace openauto
+{
+namespace autoapp
+{
+namespace ui
+{
 class volume_control : public QWidget
 {
     Q_OBJECT
@@ -28,5 +38,5 @@ private:
     bool * isMuted;
     long * vol;
 };
-
+}}}}
 #endif // VOLUME_CONTROL_H

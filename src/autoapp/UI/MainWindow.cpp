@@ -84,9 +84,7 @@ namespace f1x {
 
 
                     /*connecting callbacks*/
-                    connect(bt, SIGNAL(released()), this, SLOT(onBluetooth()));
                     connect(volume, SIGNAL(released()), this, SLOT(onVolume()));
-                    connect(wireless, SIGNAL(released()), this, SLOT(onWireless()));
 
                 }
 
