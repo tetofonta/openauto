@@ -48,8 +48,22 @@ signals:
     void toggleCursor();
     void openConnectDialog();
 
+private slots:
+    void onVolume();
 private:
-    Ui::MainWindow* ui_;
+    QWidget * showPage(QWidget * w);
+
+    Ui::MainWindow *ui;
+
+    QPushButton * bt;
+    QPushButton * volume;
+    QPushButton * wireless;
+
+    bool isMuted = false;
+
+    long vol = 50;
+
+    QWidget * volume_pg;
 };
 
 }
