@@ -1,14 +1,14 @@
 #include <welcome_page.h>
 #include "ui_welcome_page.h"
 
-Welcome_page::Welcome_page(QWidget *parent) :
+welcome_page::welcome_page(QWidget *parent) :
         QWidget(parent),
-        ui(new Ui::Welcome_page)
+        ui(new Ui::welcome_page)
 {
     ui->setupUi(this);
 }
 
-Welcome_page::~Welcome_page()
+welcome_page::~welcome_page()
 {
     delete ui;
 }
