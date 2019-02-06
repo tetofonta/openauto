@@ -15,5 +15,6 @@
         <file>icon_vol.png</file>
         <file>ico_video.png</file>
         <file>ico_web.png</file>
+        <file>ico_welcome.gif</file>
     </qresource>
 </RCC>
