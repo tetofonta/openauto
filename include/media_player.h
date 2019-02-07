@@ -20,11 +20,15 @@ private slots:
     void onPlay_pause();
     void onBack();
     void onFw();
-    void onRepeat();
+    void onOrder();
+    void titles(char*,char*,char*);
 
 private:
     Ui::media_player *ui;
     bool isPlaying = false;
+    bool isRandom = false;
+
+    std::string current_source = "/media/pi";
 
     source_diskmedia local = source_diskmedia();
 };
