@@ -64,7 +64,7 @@ namespace f1x {
                 }
 
                 void MainWindow::onMedia_btn() {
-                    showPage(media_player);
+                    showPage(media_player_pg);
                 }
 
                 MainWindow::MainWindow(QWidget *parent)
