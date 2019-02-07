@@ -100,3 +100,6 @@ target_link_libraries(btservice
                         ${Qt5MultimediaWidgets_LIBRARIES}
                         ${PROTOBUF_LIBRARIES}
                         ${AASDK_PROTO_LIBRARIES})
+
+add_executable(lol src/autoapp/source_diskmedia.cpp)
+target_link_libraries(lol mpg123 ao pthread)
