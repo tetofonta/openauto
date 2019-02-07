@@ -11,9 +11,12 @@
 #include <ao/ao.h>
 #include <mpg123.h>
 #include <thread>
+#include <QtCore/QArgument>
 
 
 class source_diskmedia {
+
+Q_OBJECT
 
     std::vector<std::string> playlist;
 
@@ -40,15 +43,28 @@ class source_diskmedia {
 
 public:
     source_diskmedia();
-    void build_playlist(bool recursive, char * path, bool random);
+
+    void build_playlist(bool recursive, char *path, bool random);
+
     void init();
 
     void play();
+
     void pause();
+
     void next();
+
     void back();
+
     void stop();
+
     void restart();
+
+signals:
+
+    void new_song_started(char * title, char * artist, char * album);
+    void song_time_changed(int perc);
+
 };
 
 

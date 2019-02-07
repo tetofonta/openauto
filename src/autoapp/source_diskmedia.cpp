@@ -2,7 +2,7 @@
 // Created by stefano on 2/7/19.
 //
 
-#include "source_diskmedia.h"
+#include <source_diskmedia.h>
 #include <string>
 #include <dirent.h>
 #include <algorithm>
@@ -54,6 +54,8 @@ void source_diskmedia::newSong(std::string path){
     mpg123_open(mh, path.c_str());
     mpg123_getformat(mh, &rate, &channels, &encoding);
 
+    emit new_song_started((char *) (path.c_str()), "io", "tu");
+
     /* set the output format and open the output device */
     format.bits = mpg123_encsize(encoding) * 8;
     format.rate = rate;
@@ -62,13 +64,23 @@ void source_diskmedia::newSong(std::string path){
     format.matrix = 0;
     dev = ao_open_live(driver, &format, NULL);
 
-    /* decode and play */
+    mpg123_seek(mh, 0, SEEK_END);
+    int total = mpg123_tell(mh);
+    mpg123_seek(mh, 0, SEEK_SET);
+
+    int prev = 0;
+
     while (mpg123_read(mh, buffer, buffer_size, &done) == MPG123_OK && !stopPlaying){
         while(this->isPaused){
             std::cout << "still paused" << std::endl;
             usleep(500000);
         }
         ao_play(dev, (char *) (buffer), done);
+        int current = mpg123_tell(mh);
+        if((int)(((float)current/(float)total)*100.0f) != prev){
+            emit song_time_changed((int)(((float)current/(float)total)*100.0f) != prev);
+            prev = (int)(((float)current/(float)total)*100.0f) != prev;
+        }
     }
 }
 
