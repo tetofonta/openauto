@@ -11,6 +11,7 @@
 #include <ao/ao.h>
 #include <mpg123.h>
 #include <thread>
+#include <QLabel>
 
 class source_diskmedia {
 
@@ -34,11 +35,14 @@ class source_diskmedia {
     int isPaused = 1;
     int stopPlaying = 0;
     int current = 0;
+    
+    QLabel * title, * artist, * album;
 
     void newSong(std::string path);
 
 public:
-    source_diskmedia();
+    source_diskmedia(QLabel * title, QLabel * artist, QLabel * album);
+    source_diskmedia(){};
 
     void build_playlist(bool recursive, char *path, bool random);
 

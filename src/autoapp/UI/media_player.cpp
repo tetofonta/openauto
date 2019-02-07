@@ -46,14 +46,13 @@ media_player::media_player(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    local=source_diskmedia(ui->title, ui->author, ui->album);
     local.init();
     local.build_playlist(true, (char *) current_source.c_str(), isRandom);
 
-    connect(local, SIGNAL(new_song_started(char *, char *, char *)), this, SLOT(titles(char*,char*,char*)));
-
-    connect(ui->control, SIGNAL(release()), this, SLOT(onPlay_pause()));
-    connect(ui->back, SIGNAL(release()), this, SLOT(onBack()));
-    connect(ui->forward, SIGNAL(release()), this, SLOT(onFw()));
+    connect(ui->control, SIGNAL(released()), this, SLOT(onPlay_pause()));
+    connect(ui->back, SIGNAL(released()), this, SLOT(onBack()));
+    connect(ui->forward, SIGNAL(released()), this, SLOT(onFw()));
     connect(ui->repeat, SIGNAL(released()), this, SLOT(onOrder()));
 }
 

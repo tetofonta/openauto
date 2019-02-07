@@ -28,9 +28,9 @@ private:
     bool isPlaying = false;
     bool isRandom = false;
 
-    std::string current_source = "/media/pi";
+    std::string current_source = "/media/pi/";
 
-    source_diskmedia local = source_diskmedia();
+    source_diskmedia local;
 };
 
 #endif // MEDIA_PLAYER_H

@@ -26,7 +26,11 @@ void listFiles(std::string path, std::string extension, std::vector<std::string>
     }
 }
 
-source_diskmedia::source_diskmedia() {}
+source_diskmedia::source_diskmedia(QLabel * title, QLabel * artist, QLabel * album) {
+    this->title = title;
+    this->artist = artist;
+    this->album = album;
+}
 
 void source_diskmedia::build_playlist(bool recursive, char * path, bool random){
     this->playlist.clear();
@@ -49,10 +53,18 @@ void source_diskmedia::init(){
     buffer = (unsigned char*) malloc(buffer_size * sizeof(unsigned char));
 }
 
-void source_diskmedia::newSong(std::string path){
+void source_diskmedia::newSong(std::string path){    
     /* open the file and get the decoding format */
     mpg123_open(mh, path.c_str());
     mpg123_getformat(mh, &rate, &channels, &encoding);
+    
+    char bbuffer[100];
+    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:28pt; font-weight:600;\">%s</span></p></body></html>", path.c_str());
+    this->title->setText(bbuffer);
+    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:18pt; \">%s</span></p></body></html>", path.c_str());
+    this->artist->setText(bbuffer);
+    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600;\">%s</span></p></body></html>", path.c_str());
+    this->album->setText(bbuffer);
 
     /* set the output format and open the output device */
     format.bits = mpg123_encsize(encoding) * 8;
@@ -89,8 +101,11 @@ void source_diskmedia::play(){
         isPlaying = 1;
         this->player = std::thread([](source_diskmedia * th){
             while(th->isPlaying) {
+                std::cout << "aa" << std::endl;
                 th->stopPlaying = 0;
+                std::cout << "aa" << std::endl;
                 th->newSong(th->playlist[th->current]);
+                std::cout << "aa" << std::endl;
                 th->current = (th->current + 1) % th->playlist.size();
             }
         }, this);
