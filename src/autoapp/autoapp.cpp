@@ -35,7 +35,6 @@
 #include <f1x/openauto/autoapp/UI/ConnectDialog.hpp>
 #include <f1x/openauto/Common/Log.hpp>
 
-#include <sound_player.h>
 
 namespace aasdk = f1x::aasdk;
 namespace autoapp = f1x::openauto::autoapp;
@@ -107,8 +106,6 @@ int main(int argc, char* argv[])
 //    qApplication.setOverrideCursor(Qt::BlankCursor);
 
     mainWindow.show();
-
-    sound_init();
 
     aasdk::usb::USBWrapper usbWrapper(usbContext);
     aasdk::usb::AccessoryModeQueryFactory queryFactory(usbWrapper, ioService);

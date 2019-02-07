@@ -64,7 +64,10 @@ void source_diskmedia::newSong(std::string path){
 
     /* decode and play */
     while (mpg123_read(mh, buffer, buffer_size, &done) == MPG123_OK && !stopPlaying){
-        while(this->isPaused);
+        while(this->isPaused){
+            std::cout << "still paused" << std::endl;
+            usleep(500000);
+        }
         ao_play(dev, (char *) (buffer), done);
     }
 }
