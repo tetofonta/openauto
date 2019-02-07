@@ -11,12 +11,8 @@
 #include <ao/ao.h>
 #include <mpg123.h>
 #include <thread>
-#include <QtCore/QArgument>
-
 
 class source_diskmedia {
-
-Q_OBJECT
 
     std::vector<std::string> playlist;
 
@@ -59,11 +55,7 @@ public:
     void stop();
 
     void restart();
-
-signals:
-
-    void new_song_started(char * title, char * artist, char * album);
-    void song_time_changed(int perc);
+;
 
 };
 
