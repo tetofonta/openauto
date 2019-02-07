@@ -71,7 +71,7 @@ private:
     QWidget * volume_pg;
     QWidget * welcome_pg;
 
-    QWidget * current;
+    QWidget * current = nullptr;
 };
 
 }

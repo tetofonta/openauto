@@ -46,7 +46,6 @@ int alsaVolume(audio_volume_action action, long* outvol){
     long minv, maxv;
 
     snd_mixer_selem_get_playback_volume_range (elem, &minv, &maxv);
-    fprintf(stderr, "Volume range <%i,%i>\n", minv, maxv);
 
     if(action == AUDIO_VOLUME_GET) {
         if(snd_mixer_selem_get_playback_volume(elem, SND_MIXER_SCHN_FRONT_LEFT, outvol) < 0) {
@@ -54,7 +53,6 @@ int alsaVolume(audio_volume_action action, long* outvol){
             return -6;
         }
 
-        fprintf(stderr, "Get volume %i with status %i\n", *outvol, ret);
         /* make the value bound to 100 */
         *outvol -= minv;
         maxv -= minv;
@@ -70,7 +68,7 @@ int alsaVolume(audio_volume_action action, long* outvol){
             snd_mixer_close(handle);
             return -8;
         }
-        fprintf(stderr, "Set volume %i with status %i\n", *outvol, ret);
+
     }
 
     snd_mixer_close(handle);
