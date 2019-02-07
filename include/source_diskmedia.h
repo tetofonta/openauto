@@ -55,11 +55,7 @@ public:
     void stop();
 
     void restart();
-
-signals:
-
-    void new_song_started(char * title, char * artist, char * album);
-    void song_time_changed(int perc);
+;
 
 };
 
