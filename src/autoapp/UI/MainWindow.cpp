@@ -56,6 +56,8 @@ namespace f1x {
 
                 void MainWindow::showPage(QWidget *w) {
                     w->show();
+                    current->hide();
+                    current = w;
                     w->setGeometry(QRect(QPoint(10, 70), QSize(920, 510)));
                 }
 

@@ -70,6 +70,8 @@ private:
     QWidget * media_player_pg;
     QWidget * volume_pg;
     QWidget * welcome_pg;
+
+    QWidget * current;
 };
 
 }
