@@ -11,12 +11,8 @@
 #include <ao/ao.h>
 #include <mpg123.h>
 #include <thread>
-#include <QtCore/QArgument>
-
 
 class source_diskmedia {
-
-Q_OBJECT
 
     std::vector<std::string> playlist;
 
