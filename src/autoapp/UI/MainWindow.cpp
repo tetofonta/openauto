@@ -104,7 +104,7 @@ namespace f1x {
 
 
                     connect(ui->volume_v, SIGNAL(released()), this, SLOT(onVolume_btn()));
-                    connect(ui->volume_v, SIGNAL(released()), this, SLOT(onMedia_btn()));
+                    connect(ui->music_b, SIGNAL(released()), this, SLOT(onMedia_btn()));
                 }
 
                 MainWindow::~MainWindow() {

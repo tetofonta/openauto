@@ -16,5 +16,12 @@
         <file>ico_video.png</file>
         <file>ico_web.png</file>
         <file>ico_welcome.gif</file>
+        <file>ico_bw.png</file>
+        <file>ico_fw.png</file>
+        <file>ico_pause.png</file>
+        <file>ico_play.png</file>
+        <file>ico_random.png</file>
+        <file>ico_repeat.png</file>
+        <file>ico_source.png</file>
     </qresource>
 </RCC>
