@@ -53,6 +53,7 @@ signals:
 private slots:
     void onVolume();
     void onVolume_btn();
+    void onMedia_btn();
 private:
     void showPage(QWidget * w);
 
@@ -66,6 +67,7 @@ private:
 
     long vol = 50;
 
+    QWidget * media_player_pg;
     QWidget * volume_pg;
     QWidget * welcome_pg;
 };

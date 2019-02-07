@@ -23,6 +23,7 @@
 #include <alsa_manager.h>
 #include <volume_control.h>
 #include <welcome_page.h>
+#include <media_player.h>
 #include "ui_mainwindow.h"
 
 namespace f1x {
@@ -62,6 +63,10 @@ namespace f1x {
                     showPage(volume_pg);
                 }
 
+                void MainWindow::onMedia_btn() {
+                    showPage(media_player);
+                }
+
                 MainWindow::MainWindow(QWidget *parent)
                         : QMainWindow(parent), ui(new Ui::MainWindow) {
                     ui->setupUi(this);
@@ -70,6 +75,8 @@ namespace f1x {
                     ui->setupUi(this);
                     welcome_pg = new welcome_page(this);
                     welcome_pg->hide();
+                    media_player_pg = new media_player(this);
+                    media_player_pg->hide();
                     volume_pg = new volume_control(this, &(this->isMuted), &(this->vol));
                     volume_pg->hide();
                     connect(volume_pg, SIGNAL (volumeMuted()),this, SLOT (onVolume()));
@@ -95,6 +102,7 @@ namespace f1x {
 
 
                     connect(ui->volume_v, SIGNAL(released()), this, SLOT(onVolume_btn()));
+                    connect(ui->volume_v, SIGNAL(released()), this, SLOT(onMedia_btn()));
                 }
 
                 MainWindow::~MainWindow() {
