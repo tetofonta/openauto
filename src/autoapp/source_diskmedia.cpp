@@ -30,6 +30,7 @@ source_diskmedia::source_diskmedia(QLabel * title, QLabel * artist, QLabel * alb
     this->title = title;
     this->artist = artist;
     this->album = album;
+    std::cout << "aaaaaaaaaaaaaaaa" << std::endl;
 }
 
 void source_diskmedia::build_playlist(bool recursive, char * path, bool random){

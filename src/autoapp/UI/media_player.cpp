@@ -30,15 +30,6 @@ void media_player::onOrder(){
     local.build_playlist(true, (char *) current_source.c_str(), isRandom);
 }
 
-void media_player::titles(char * title, char * artist, char * album){
-    char buffer[100];
-    sprintf(buffer, "<html><head/><body><p><span style=\" font-size:28pt; font-weight:600;\">%s</span></p></body></html>", title);
-    ui->title->setText(buffer);
-    sprintf(buffer, "<html><head/><body><p><span style=\" font-size:18pt; \">%s</span></p></body></html>", artist);
-    ui->author->setText(buffer);
-    sprintf(buffer, "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600;\">%s</span></p></body></html>", album);
-    ui->album->setText(buffer);
-}
 
 media_player::media_player(QWidget *parent) :
         QWidget(parent),
