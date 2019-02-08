@@ -58,13 +58,13 @@ void source_diskmedia::newSong(std::string path){
     mpg123_open(mh, path.c_str());
     mpg123_getformat(mh, &rate, &channels, &encoding);
     
-    char bbuffer[100];
-    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:28pt; font-weight:600;\">%s</span></p></body></html>", path.c_str());
-    this->title->setText(bbuffer);
-    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:18pt; \">%s</span></p></body></html>", path.c_str());
-    this->artist->setText(bbuffer);
-    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600;\">%s</span></p></body></html>", path.c_str());
-    this->album->setText(bbuffer);
+//    char bbuffer[100];
+//    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:28pt; font-weight:600;\">%s</span></p></body></html>", path.c_str());
+//    this->title->setText(bbuffer);
+//    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:18pt; \">%s</span></p></body></html>", path.c_str());
+//    this->artist->setText(bbuffer);
+//    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600;\">%s</span></p></body></html>", path.c_str());
+//    this->album->setText(bbuffer);
 
     /* set the output format and open the output device */
     format.bits = mpg123_encsize(encoding) * 8;
@@ -134,4 +134,29 @@ void source_diskmedia::stop() {
 void source_diskmedia::restart(){
     this->current -= 1;
     this->stopPlaying = 1;
+}
+
+int main(){
+    source_diskmedia a = source_diskmedia();
+    a.init();
+    a.build_playlist(true, "/home/stefano/Music/", true);
+
+    while(1){
+        int q;
+        scanf("%d", &q);
+        switch (q){
+            case 0:
+                a.play();
+                break;
+            case 1:
+                a.pause();
+                break;
+            case 2:
+                a.next();
+                break;
+            case 3:
+                a.back();
+        }
+    }
+    return 0;
 }

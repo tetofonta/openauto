@@ -59,8 +59,6 @@ public:
     void stop();
 
     void restart();
-;
-
 };
 
 
