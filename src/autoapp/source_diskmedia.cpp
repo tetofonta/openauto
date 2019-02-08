@@ -9,6 +9,7 @@
 #include <iostream>
 #include <zconf.h>
 #include <random>
+#include <QtWidgets/QSlider>
 
 void listFiles(std::string path, std::string extension, std::vector<std::string> * ret, int rec) {
     if(rec == 0) return;
@@ -26,11 +27,11 @@ void listFiles(std::string path, std::string extension, std::vector<std::string>
     }
 }
 
-source_diskmedia::source_diskmedia(QLabel * title, QLabel * artist, QLabel * album) {
+source_diskmedia::source_diskmedia(QLabel * title, QLabel * artist, QLabel * album, QSlider * progress) {
     this->title = title;
     this->artist = artist;
     this->album = album;
-    std::cout << "aaaaaaaaaaaaaaaa" << std::endl;
+    this->progress = progress;
 }
 
 void source_diskmedia::build_playlist(bool recursive, char * path, bool random){
@@ -58,13 +59,14 @@ void source_diskmedia::newSong(std::string path){
     /* open the file and get the decoding format */
     mpg123_open(mh, path.c_str());
     mpg123_getformat(mh, &rate, &channels, &encoding);
-    
-    char bbuffer[100];
-    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:28pt; font-weight:600;\">%s</span></p></body></html>", path.c_str());
+
+    //BUFFER OVERFLOW
+    char bbuffer[150];
+    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:28pt; font-weight:600;\">%s%s</span></p></body></html>", (path.substr(0, 35)).c_str(), path.length() > 35 ? "..." : "");
     this->title->setText(bbuffer);
-    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:18pt; \">%s</span></p></body></html>", path.c_str());
+    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:18pt; \">%s%s</span></p></body></html>", (path.substr(0, 35)).c_str(), path.length() > 35 ? "..." : "");
     this->artist->setText(bbuffer);
-    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600;\">%s</span></p></body></html>", path.c_str());
+    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600;\">%s%s</span></p></body></html>", (path.substr(0, 35)).c_str(), path.length() > 35 ? "..." : "");
     this->album->setText(bbuffer);
 
     /* set the output format and open the output device */
@@ -89,7 +91,8 @@ void source_diskmedia::newSong(std::string path){
         ao_play(dev, (char *) (buffer), done);
         int current = mpg123_tell(mh);
         if((int)(((float)current/(float)total)*100.0f) != prev){
-            prev = (int)(((float)current/(float)total)*100.0f) != prev;
+            prev = (int)(((float)current/(float)total)*100.0f);
+            progress->setValue(prev);
         }
     }
 }
