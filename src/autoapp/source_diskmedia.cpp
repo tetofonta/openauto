@@ -59,7 +59,7 @@ void source_diskmedia::newSong(std::string path){
     mpg123_open(mh, path.c_str());
     mpg123_getformat(mh, &rate, &channels, &encoding);
     
-    char bbuffer[100];
+    char bbuffer[800];
     sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:28pt; font-weight:600;\">%s</span></p></body></html>", path.c_str());
     this->title->setText(bbuffer);
     sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:18pt; \">%s</span></p></body></html>", path.c_str());
