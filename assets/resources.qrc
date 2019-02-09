@@ -23,5 +23,8 @@
         <file>ico_random.png</file>
         <file>ico_repeat.png</file>
         <file>ico_source.png</file>
+
+        <file>cover.jpg</file>
+        <file>cover_bl.jpg</file>
     </qresource>
 </RCC>
