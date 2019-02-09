@@ -58,7 +58,7 @@ namespace f1x {
                     w->show();
                     if(current != nullptr && current != w) current->hide();
                     current = w;
-                    w->setGeometry(QRect(QPoint(0, 90), QSize(920, 510)));
+                    w->setGeometry(QRect(QPoint(0, 70), QSize(920, 510)));
                 }
 
                 void MainWindow::onVolume_btn() {
