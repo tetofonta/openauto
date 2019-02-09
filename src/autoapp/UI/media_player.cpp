@@ -2,6 +2,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QListWidget>
 #include <dirent.h>
+#include <functional>
 #include "ui_media_player.h"
 #include "ui_mainwindow.h"
 
@@ -39,26 +40,31 @@ void media_player::onOrder(){
     local.build_playlist(true, (char *) current_source.c_str(), isRandom);
 }
 
+void media_player::chsrc(char * folder){
+    local.build_playlist(true, folder, isRandom);
+    this->current_source = folder;
+}
+
 QPushButton *addSource(QListWidget *list, char *icon, char * text) {
     QListWidgetItem *item = new QListWidgetItem(list);
     QPushButton *button = new QPushButton();
     button->setIcon(QIcon(icon));
     button->setText(text);
     button->setFlat(true);
-    item->setSizeHint(button->minimumSizeHint());
+//    item->setSizeHint(button->minimumSizeHint());
     list->setItemWidget(item, button);
     return button;
 }
 
-void scanLocalSources(std::string path, int rec, QListWidget * list) {
+void media_player::scanLocalSources(std::string path, int rec, QListWidget * list) {
     if(rec == 0) return;
 
     if (auto dir = opendir(path.c_str())) {
         while (auto f = readdir(dir)) {
             if (!f->d_name || f->d_name[0] == '.') continue;
             if (f->d_type == DT_DIR){
-                addSource(list, ":/ico_usb.png", !f->d_name);
-                scanLocalSources(path + f->d_name + "/", rec - 1, ui);
+                connect(addSource(list, ":/ico_usb.png", f->d_name), &QPushButton::released, this, [=](){this->chsrc((char *) (path + f->d_name + "/").c_str());});
+                scanLocalSources(path + f->d_name + "/", rec - 1, list);
             }
         }
         closedir(dir);

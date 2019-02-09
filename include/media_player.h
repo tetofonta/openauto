@@ -2,6 +2,7 @@
 #define MEDIA_PLAYER_H
 
 #include <QWidget>
+#include <QtWidgets/QListWidget>
 #include "source_diskmedia.h"
 
 namespace Ui {
@@ -31,6 +32,9 @@ private:
     std::string current_source = "/media/pi/";
 
     source_diskmedia local;
+
+    void scanLocalSources(std::string path, int rec, QListWidget * list);
+    void chsrc(char * path);
 };
 
 #endif // MEDIA_PLAYER_H
