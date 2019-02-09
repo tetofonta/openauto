@@ -6,6 +6,8 @@
 #include "ui_media_player.h"
 #include "ui_mainwindow.h"
 #include <iostream>
+#include <zconf.h>
+
 void media_player::onPlay_pause(){
     if(this->isPlaying){
         local.pause();
@@ -40,8 +42,11 @@ void media_player::onOrder(){
     local.build_playlist(true, (char *) current_source.c_str(), isRandom);
 }
 
-void media_player::chsrc(char * folder){
-    local.build_playlist(true, folder, isRandom);
+void media_player::chsrc(std::string folder){
+    local.stop();
+    usleep(1000);
+    local.pause();
+    local.build_playlist(true, (char *) folder.c_str(), isRandom);
     this->current_source = folder;
     std::cout << folder << std::endl;
 }
@@ -64,8 +69,7 @@ void media_player::scanLocalSources(std::string path, int rec, QListWidget * lis
         while (auto f = readdir(dir)) {
             if (!f->d_name || f->d_name[0] == '.') continue;
             if (f->d_type == DT_DIR){
-                connect(addSource(list, ":/ico_usb.png", f->d_name), &QPushButton::released, this, [=](){this->chsrc((char *) (path + f->d_name + "/").c_str());});
-                scanLocalSources(path + f->d_name + "/", rec - 1, list);
+                connect(addSource(list, ":/ico_usb.png", f->d_name), &QPushButton::released, this, std::bind(this->chsrc, path + f->d_name + "/"));
             }
         }
         closedir(dir);
@@ -80,6 +84,7 @@ media_player::media_player(QWidget *parent) :
     ui->setupUi(this);
 
     local=source_diskmedia(ui->title, ui->author, ui->album, ui->horizontalSlider);
+
     scanLocalSources("/media/pi/", 100, ui->sources);
 
 

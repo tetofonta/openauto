@@ -32,44 +32,7 @@
                 <enum>Qt::Horizontal</enum>
             </property>
         </widget>
-        <widget class="QLabel" name="cover">
-            <property name="geometry">
-                <rect>
-                    <x>0</x>
-                    <y>0</y>
-                    <width>510</width>
-                    <height>510</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string/>
-            </property>
-            <property name="pixmap">
-                <pixmap resource="../../../assets/resources.qrc">:/cover.jpg</pixmap>
-            </property>
-            <property name="scaledContents">
-                <bool>true</bool>
-            </property>
-        </widget>
-        <widget class="QLabel" name="cover_bl">
-            <property name="geometry">
-                <rect>
-                    <x>0</x>
-                    <y>0</y>
-                    <width>920</width>
-                    <height>510</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string/>
-            </property>
-            <property name="pixmap">
-                <pixmap resource="../../../assets/resources.qrc">:/cover_bl.jpg</pixmap>
-            </property>
-            <property name="scaledContents">
-                <bool>true</bool>
-            </property>
-        </widget>
+
         <widget class="QFrame" name="frame">
             <property name="geometry">
                 <rect>
@@ -78,9 +41,6 @@
                     <width>921</width>
                     <height>80</height>
                 </rect>
-            </property>
-            <property name="styleSheet">
-                <string notr="true">background-color: rgba(0,0,0,.5)</string>
             </property>
             <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -240,9 +200,6 @@
                     <height>221</height>
                 </rect>
             </property>
-            <property name="styleSheet">
-                <string notr="true">background-color: rgba(0,0,0,.5)</string>
-            </property>
             <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
             </property>
@@ -313,15 +270,10 @@
                     <height>211</height>
                 </rect>
             </property>
-            <property name="styleSheet">
-                <string notr="true">background-color: rgba(0,0,0,.5)</string>
-            </property>
             <property name="frameShadow">
                 <enum>QFrame::Plain</enum>
             </property>
         </widget>
-        <zorder>cover_bl</zorder>
-        <zorder>cover</zorder>
         <zorder>frame_2</zorder>
         <zorder>horizontalSlider</zorder>
         <zorder>frame</zorder>

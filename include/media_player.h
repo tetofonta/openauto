@@ -34,7 +34,7 @@ private:
     source_diskmedia local;
 
     void scanLocalSources(std::string path, int rec, QListWidget * list);
-    void chsrc(char * path);
+    void chsrc(std::string path);
 };
 
 #endif // MEDIA_PLAYER_H
