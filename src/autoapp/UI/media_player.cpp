@@ -69,7 +69,7 @@ void media_player::scanLocalSources(std::string path, int rec, QListWidget * lis
         while (auto f = readdir(dir)) {
             if (!f->d_name || f->d_name[0] == '.') continue;
             if (f->d_type == DT_DIR){
-                connect(addSource(list, ":/ico_usb.png", f->d_name), &QPushButton::released, this, std::bind(this->chsrc, path + f->d_name + "/"));
+                connect(addSource(list, ":/ico_usb.png", f->d_name), &QPushButton::released, this, std::bind(media_player::chsrc, path + f->d_name + "/"));
             }
         }
         closedir(dir);
@@ -84,7 +84,7 @@ media_player::media_player(QWidget *parent) :
     ui->setupUi(this);
 
     local=source_diskmedia(ui->title, ui->author, ui->album, ui->horizontalSlider);
-    connect(addSource(ui->sources, ":/ico_aux.png", "aux"), &QPushButton::released, this, std::bind(this->chsrc, "/media/pi/"));
+    connect(addSource(ui->sources, ":/ico_aux.png", "aux"), &QPushButton::released, this, std::bind(media_player::chsrc, "/media/pi/"));
 
     scanLocalSources("/media/pi/", 100, ui->sources);
 
