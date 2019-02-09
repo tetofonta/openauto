@@ -37,7 +37,7 @@ media_player::media_player(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    local=source_diskmedia(ui->title, ui->author, ui->album);
+    local=source_diskmedia(ui->title, ui->author, ui->album, ui->horizontalSlider);
     local.init();
     local.build_playlist(true, (char *) current_source.c_str(), isRandom);
 

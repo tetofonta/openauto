@@ -12,6 +12,7 @@
 #include <mpg123.h>
 #include <thread>
 #include <QLabel>
+#include <QSlider>
 
 class source_diskmedia {
 
@@ -37,11 +38,12 @@ class source_diskmedia {
     int current = 0;
     
     QLabel * title, * artist, * album;
+    QSlider * progress;
 
     void newSong(std::string path);
 
 public:
-    source_diskmedia(QLabel * title, QLabel * artist, QLabel * album);
+    source_diskmedia(QLabel * title, QLabel * artist, QLabel * album, QSlider * progress);
     source_diskmedia(){};
 
     void build_playlist(bool recursive, char *path, bool random);
