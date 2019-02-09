@@ -84,6 +84,7 @@ media_player::media_player(QWidget *parent) :
     ui->setupUi(this);
 
     local=source_diskmedia(ui->title, ui->author, ui->album, ui->horizontalSlider);
+    connect(addSource(ui->sources, ":/ico_aux.png", "aux"), &QPushButton::released, this, std::bind(this->chsrc, "/media/pi/"));
 
     scanLocalSources("/media/pi/", 100, ui->sources);
 
