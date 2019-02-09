@@ -25,6 +25,9 @@
                     <height>17</height>
                 </rect>
             </property>
+            <property name="styleSheet">
+                <string notr="true">background-color: transparent</string>
+            </property>
             <property name="orientation">
                 <enum>Qt::Horizontal</enum>
             </property>
@@ -71,7 +74,7 @@
             <property name="geometry">
                 <rect>
                     <x>0</x>
-                    <y>430</y>
+                    <y>431</y>
                     <width>921</width>
                     <height>80</height>
                 </rect>
