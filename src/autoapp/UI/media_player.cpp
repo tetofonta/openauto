@@ -16,9 +16,14 @@ void media_player::onPlay_pause(){
 void media_player::onBack(){
     local.back();
 }
-void media_player::onFw(){
+void media_player::onFw() {
     local.next();
 }
+
+void media_player::onSrc(){
+    ui->sources->show();
+}
+
 void media_player::onOrder(){
     if(this->isRandom){
         ui->repeat->setIcon(QIcon(":/ico_repeat"));

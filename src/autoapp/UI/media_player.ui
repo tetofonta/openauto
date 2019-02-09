@@ -16,215 +16,6 @@
         <property name="autoFillBackground">
             <bool>false</bool>
         </property>
-        <widget class="QWidget" name="horizontalLayoutWidget">
-            <property name="geometry">
-                <rect>
-                    <x>0</x>
-                    <y>430</y>
-                    <width>921</width>
-                    <height>78</height>
-                </rect>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout">
-                <item>
-                    <widget class="QPushButton" name="source">
-                        <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="text">
-                            <string/>
-                        </property>
-                        <property name="icon">
-                            <iconset resource="../../../assets/resources.qrc">
-                                <normaloff>:/ico_source.png</normaloff>:/ico_source.png</iconset>
-                        </property>
-                        <property name="iconSize">
-                            <size>
-                                <width>64</width>
-                                <height>64</height>
-                            </size>
-                        </property>
-                        <property name="flat">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </item>
-                <item>
-                    <widget class="Line" name="line">
-                        <property name="orientation">
-                            <enum>Qt::Vertical</enum>
-                        </property>
-                    </widget>
-                </item>
-                <item>
-                    <widget class="QPushButton" name="back">
-                        <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="text">
-                            <string/>
-                        </property>
-                        <property name="icon">
-                            <iconset resource="../../../assets/resources.qrc">
-                                <normaloff>:/ico_bw.png</normaloff>:/ico_bw.png</iconset>
-                        </property>
-                        <property name="iconSize">
-                            <size>
-                                <width>64</width>
-                                <height>64</height>
-                            </size>
-                        </property>
-                        <property name="flat">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </item>
-                <item>
-                    <widget class="Line" name="line_2">
-                        <property name="orientation">
-                            <enum>Qt::Vertical</enum>
-                        </property>
-                    </widget>
-                </item>
-                <item>
-                    <widget class="QPushButton" name="control">
-                        <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="text">
-                            <string/>
-                        </property>
-                        <property name="icon">
-                            <iconset resource="../../../assets/resources.qrc">
-                                <normaloff>:/ico_play.png</normaloff>:/ico_play.png</iconset>
-                        </property>
-                        <property name="iconSize">
-                            <size>
-                                <width>64</width>
-                                <height>64</height>
-                            </size>
-                        </property>
-                        <property name="flat">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </item>
-                <item>
-                    <widget class="Line" name="line_3">
-                        <property name="orientation">
-                            <enum>Qt::Vertical</enum>
-                        </property>
-                    </widget>
-                </item>
-                <item>
-                    <widget class="QPushButton" name="forward">
-                        <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="text">
-                            <string/>
-                        </property>
-                        <property name="icon">
-                            <iconset resource="../../../assets/resources.qrc">
-                                <normaloff>:/ico_fw.png</normaloff>:/ico_fw.png</iconset>
-                        </property>
-                        <property name="iconSize">
-                            <size>
-                                <width>64</width>
-                                <height>64</height>
-                            </size>
-                        </property>
-                        <property name="flat">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </item>
-                <item>
-                    <widget class="Line" name="line_4">
-                        <property name="orientation">
-                            <enum>Qt::Vertical</enum>
-                        </property>
-                    </widget>
-                </item>
-                <item>
-                    <widget class="QPushButton" name="repeat">
-                        <property name="sizePolicy">
-                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                            </sizepolicy>
-                        </property>
-                        <property name="text">
-                            <string/>
-                        </property>
-                        <property name="icon">
-                            <iconset resource="../../../assets/resources.qrc">
-                                <normaloff>:/ico_repeat.png</normaloff>:/ico_repeat.png</iconset>
-                        </property>
-                        <property name="iconSize">
-                            <size>
-                                <width>64</width>
-                                <height>64</height>
-                            </size>
-                        </property>
-                        <property name="flat">
-                            <bool>true</bool>
-                        </property>
-                    </widget>
-                </item>
-            </layout>
-        </widget>
-        <widget class="QLabel" name="title">
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>80</y>
-                    <width>741</width>
-                    <height>61</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt; font-weight:600;&quot;&gt;SONG TITLE [UP TO 35 CHARACTERS]...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-        </widget>
-        <widget class="QLabel" name="author">
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>140</y>
-                    <width>421</width>
-                    <height>31</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Author&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-        </widget>
-        <widget class="QLabel" name="album">
-            <property name="geometry">
-                <rect>
-                    <x>20</x>
-                    <y>170</y>
-                    <width>411</width>
-                    <height>41</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;Album&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-            </property>
-        </widget>
         <widget class="QSlider" name="horizontalSlider">
             <property name="geometry">
                 <rect>
@@ -238,6 +29,304 @@
                 <enum>Qt::Horizontal</enum>
             </property>
         </widget>
+        <widget class="QLabel" name="cover">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>510</width>
+                    <height>510</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string/>
+            </property>
+            <property name="pixmap">
+                <pixmap resource="../../../assets/resources.qrc">:/cover.jpg</pixmap>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QLabel" name="cover_bl">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>920</width>
+                    <height>510</height>
+                </rect>
+            </property>
+            <property name="text">
+                <string/>
+            </property>
+            <property name="pixmap">
+                <pixmap resource="../../../assets/resources.qrc">:/cover_bl.jpg</pixmap>
+            </property>
+            <property name="scaledContents">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <widget class="QFrame" name="frame">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>430</y>
+                    <width>921</width>
+                    <height>80</height>
+                </rect>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">background-color: rgba(0,0,0,.5)</string>
+            </property>
+            <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+            </property>
+            <widget class="QWidget" name="horizontalLayoutWidget">
+                <property name="geometry">
+                    <rect>
+                        <x>0</x>
+                        <y>0</y>
+                        <width>921</width>
+                        <height>78</height>
+                    </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                    <item>
+                        <widget class="QPushButton" name="source">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string/>
+                            </property>
+                            <property name="icon">
+                                <iconset resource="../../../assets/resources.qrc">
+                                    <normaloff>:/ico_source.png</normaloff>:/ico_source.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                                <size>
+                                    <width>64</width>
+                                    <height>64</height>
+                                </size>
+                            </property>
+                            <property name="flat">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="back">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string/>
+                            </property>
+                            <property name="icon">
+                                <iconset resource="../../../assets/resources.qrc">
+                                    <normaloff>:/ico_bw.png</normaloff>:/ico_bw.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                                <size>
+                                    <width>64</width>
+                                    <height>64</height>
+                                </size>
+                            </property>
+                            <property name="flat">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="control">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string/>
+                            </property>
+                            <property name="icon">
+                                <iconset resource="../../../assets/resources.qrc">
+                                    <normaloff>:/ico_play.png</normaloff>:/ico_play.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                                <size>
+                                    <width>64</width>
+                                    <height>64</height>
+                                </size>
+                            </property>
+                            <property name="flat">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="forward">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string/>
+                            </property>
+                            <property name="icon">
+                                <iconset resource="../../../assets/resources.qrc">
+                                    <normaloff>:/ico_fw.png</normaloff>:/ico_fw.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                                <size>
+                                    <width>64</width>
+                                    <height>64</height>
+                                </size>
+                            </property>
+                            <property name="flat">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                    <item>
+                        <widget class="QPushButton" name="repeat">
+                            <property name="sizePolicy">
+                                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                                    <horstretch>0</horstretch>
+                                    <verstretch>0</verstretch>
+                                </sizepolicy>
+                            </property>
+                            <property name="text">
+                                <string/>
+                            </property>
+                            <property name="icon">
+                                <iconset resource="../../../assets/resources.qrc">
+                                    <normaloff>:/ico_repeat.png</normaloff>:/ico_repeat.png</iconset>
+                            </property>
+                            <property name="iconSize">
+                                <size>
+                                    <width>64</width>
+                                    <height>64</height>
+                                </size>
+                            </property>
+                            <property name="flat">
+                                <bool>true</bool>
+                            </property>
+                        </widget>
+                    </item>
+                </layout>
+            </widget>
+        </widget>
+        <widget class="QFrame" name="frame_2">
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>921</width>
+                    <height>221</height>
+                </rect>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">background-color: rgba(0,0,0,.5)</string>
+            </property>
+            <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+            </property>
+            <widget class="QLabel" name="title">
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>80</y>
+                        <width>851</width>
+                        <height>61</height>
+                    </rect>
+                </property>
+                <property name="styleSheet">
+                    <string notr="true">background-color:transparent; color: #FFF</string>
+                </property>
+                <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:28pt; font-weight:600;&quot;&gt;SONG TITLE [UP TO 35 CHARACTERS]...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+            </widget>
+            <widget class="QLabel" name="author">
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>140</y>
+                        <width>421</width>
+                        <height>31</height>
+                    </rect>
+                </property>
+                <property name="styleSheet">
+                    <string notr="true">background-color:transparent; color: #FFF</string>
+                </property>
+                <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt;&quot;&gt;Author&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+            </widget>
+            <widget class="QLabel" name="album">
+                <property name="geometry">
+                    <rect>
+                        <x>20</x>
+                        <y>170</y>
+                        <width>411</width>
+                        <height>41</height>
+                    </rect>
+                </property>
+                <property name="styleSheet">
+                    <string notr="true">background-color:transparent; color: #FFF</string>
+                </property>
+                <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:26pt; font-weight:600;&quot;&gt;Album&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+            </widget>
+        </widget>
+        <widget class="QListWidget" name="sources">
+            <property name="enabled">
+                <bool>true</bool>
+            </property>
+            <property name="visible">
+                <bool>false</bool>
+            </property>
+            <property name="geometry">
+                <rect>
+                    <x>0</x>
+                    <y>221</y>
+                    <width>256</width>
+                    <height>211</height>
+                </rect>
+            </property>
+            <property name="styleSheet">
+                <string notr="true">background-color: rgba(0,0,0,.5)</string>
+            </property>
+            <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+            </property>
+            <property name="alternatingRowColors">
+                <bool>true</bool>
+            </property>
+        </widget>
+        <zorder>cover_bl</zorder>
+        <zorder>cover</zorder>
+        <zorder>frame_2</zorder>
+        <zorder>horizontalSlider</zorder>
+        <zorder>frame</zorder>
+        <zorder>horizontalLayoutWidget</zorder>
+        <zorder>sources</zorder>
     </widget>
     <resources>
         <include location="../../../assets/resources.qrc"/>

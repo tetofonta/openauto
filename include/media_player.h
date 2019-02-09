@@ -21,6 +21,7 @@ private slots:
     void onBack();
     void onFw();
     void onOrder();
+    void onSrc();
 
 private:
     Ui::media_player *ui;

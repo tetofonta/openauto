@@ -1,3 +1,4 @@
+
 //
 // Created by stefano on 2/7/19.
 //
@@ -60,12 +61,15 @@ void source_diskmedia::newSong(std::string path){
     mpg123_open(mh, path.c_str());
     mpg123_getformat(mh, &rate, &channels, &encoding);
 
+    path = path.substr(path.find_last_of("/") + 1);
+
+    //BUFFER OVERFLOW
     char bbuffer[150];
     sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:28pt; font-weight:600;\">%s%s</span></p></body></html>", (path.substr(0, 35)).c_str(), path.length() > 35 ? "..." : "");
     this->title->setText(bbuffer);
-    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:18pt; \">%s%s</span></p></body></html>", (path.substr(0, 35)).c_str(), path.length() > 35 ? "..." : "");
+    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:18pt; \"></span></p></body></html>");
     this->artist->setText(bbuffer);
-    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600;\">%s%s</span></p></body></html>", (path.substr(0, 35)).c_str(), path.length() > 35 ? "..." : "");
+    sprintf(bbuffer, "<html><head/><body><p><span style=\" font-size:26pt; font-weight:600;\"></span></p></body></html>");
     this->album->setText(bbuffer);
 
     /* set the output format and open the output device */
